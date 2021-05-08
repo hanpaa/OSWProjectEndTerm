@@ -8,8 +8,8 @@
                 <h1><a href="#">MyTodo</a></h1>
             </div>
             <div class="login">
-                <a href="#">Login</a>
-                <a href="#">Sign up</a>
+                <a href="http://localhost:8080/login.html">Login</a>
+                <a href="http://localhost:8080/signup.html">Sign up</a>
             </div>
         </div>
 
