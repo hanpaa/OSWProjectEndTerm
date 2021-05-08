@@ -1,0 +1,310 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'NanumSquare';
+  font-weight: 300;
+  src: url(../css/font/NanumSquareL.eot);
+  src: url(../css/font/NanumSquareL.eot?#iefix) format("embedded-opentype"), url(../css/font/NanumSquareL.woff) format("woff"), url(../css/font/NanumSquareL.ttf) format("truetype"); }
+
+@font-face {
+  font-family: 'NanumSquare';
+  font-weight: 400;
+  src: url(../css/font/NanumSquareR.eot);
+  src: url(../css/font/NanumSquareR.eot?#iefix) format("embedded-opentype"), url(../css/font/NanumSquareR.woff) format("woff"), url(../css/font/NanumSquareR.ttf) format("truetype"); }
+
+@font-face {
+  font-family: 'NanumSquare';
+  font-weight: 700;
+  src: url(../css/font/NanumSquareB.eot);
+  src: url(../css/font/NanumSquareB.eot?#iefix) format("embedded-opentype"), url(../css/font/NanumSquareB.woff) format("woff"), url(../css/font/NanumSquareB.ttf) format("truetype"); }
+
+@font-face {
+  font-family: 'NanumSquare';
+  font-weight: 800;
+  src: url(../css/font/NanumSquareEB.eot);
+  src: url(../css/font/NanumSquareEB.eot?#iefix) format("embedded-opentype"), url(../css/font/NanumSquareEB.woff) format("woff"), url(../css/font/NanumSquareEB.ttf) format("truetype"); }
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url("../css/font/OpenSans-Bold.eot");
+  src: url("../css/font/OpenSans-Bold.eot?#iefix") format("embedded-opentype"), url("../css/font/OpenSans-Bold.woff") format("woff"), url("../css/font/OpenSans-Bold.ttf") format("truetype");
+  font-weight: 700; }
+
+/*---------------------------------------변수---------------------------------------*/
+/*--------------------------------------start--------------------------------------*/
+html {
+  font-size: 10px; }
+
+body {
+  margin: 0;
+  font-family: 'NanumSquare', sans-serif;
+  font-weight: 400;
+  background-color: #EAEDF0; }
+
+#wrap {
+  width: 100%;
+  height: 100%; }
+
+button, input {
+  border: 0;
+  outline: 0; }
+
+/*-------------------------------------header-------------------------------------*/
+.header {
+  height: 56px; }
+  .header .header-area {
+    height: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .header .header-area .logo {
+      margin: auto 0 auto 16px; }
+      .header .header-area .logo a {
+        font-size: 2rem;
+        font-weight: 800;
+        color: black; }
+    .header .header-area .login {
+      margin: auto 0; }
+      .header .header-area .login a {
+        padding: 16px;
+        font-size: 1.4rem;
+        color: #b89d0e; }
+
+/*-------------------------------------banner-------------------------------------*/
+.banner {
+  height: 136px; }
+  .banner .banner-area {
+    height: 136px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .banner .banner-area .time {
+      height: 74px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center; }
+      .banner .banner-area .time h2 {
+        font-size: 4.1rem;
+        font-weight: 800;
+        letter-spacing: -0.025em; }
+      .banner .banner-area .time p {
+        font-size: 1.6rem; }
+
+/*-------------------------------------contents-------------------------------------*/
+.list {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .list .list-area {
+    padding-left: 16px;
+    max-width: 400px;
+    width: 100vw; }
+    .list .list-area .todo-list-sort {
+      height: 44px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center; }
+      .list .list-area .todo-list-sort .sort-method a {
+        padding: 12px 16px;
+        font-size: 1.6rem;
+        border-radius: 50px; }
+      .list .list-area .todo-list-sort .sort-method .is-active {
+        box-shadow: inset 4px 4px 8px #c7c9cc, inset -4px -4px 8px #ffffff; }
+    .list .list-area .todo-list {
+      display: flex;
+      flex-direction: column; }
+      .list .list-area .todo-list .box {
+        margin-bottom: 24px;
+        display: flex;
+        flex-direction: row; }
+        .list .list-area .todo-list .box .box-contents {
+          max-width: 400px;
+          width: 82.188vw;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          border-radius: 10px;
+          box-shadow: 5px 5px 12px #c7c9cc, -5px -5px 12px #ffffff; }
+          .list .list-area .todo-list .box .box-contents .todo .todo-title {
+            padding: 6px 0 0 6px;
+            display: flex;
+            flex-direction: row;
+            align-items: center; }
+            .list .list-area .todo-list .box .box-contents .todo .todo-title img {
+              width: 26px;
+              height: 26px;
+              border-radius: 26px; }
+            .list .list-area .todo-list .box .box-contents .todo .todo-title h3 {
+              margin-left: 8px;
+              font-size: 1.6rem; }
+          .list .list-area .todo-list .box .box-contents .todo .todo-text {
+            padding: 6px; }
+            .list .list-area .todo-list .box .box-contents .todo .todo-text p {
+              font-size: 1.8rem;
+              line-height: 2.4rem; }
+          .list .list-area .todo-list .box .box-contents .checkbox {
+            padding: 0 6px;
+            display: flex;
+            justify-content: center;
+            align-items: center; }
+        .list .list-area .todo-list .box .box-setting {
+          display: flex;
+          flex-direction: column;
+          justify-content: center; }
+          .list .list-area .todo-list .box .box-setting a {
+            padding: 14px 14px;
+            display: flex;
+            justify-content: center;
+            align-items: center; }
+
+/*-------------------------------------bottom nav-------------------------------------*/
+.nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 52px;
+  box-shadow: 0 -4px 8px #ffffff; }
+
+.nav-area {
+  width: 100vw;
+  height: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.nav button {
+  padding: 16px;
+  border-radius: 50px;
+  background-color: #EAEDF0; }
+  .nav button:active, .nav button:hover, .nav button:focus {
+    background-color: #EAEDF0;
+    box-shadow: inset 3px 3px 7px #c7c9cc, inset -3px -3px 7px #ffffff;
+    transition-duration: 600ms; }
+
+/*----------------------------------Add To Do Box-----------------------------------*/
+.popup {
+  top: 0;
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99;
+  background-color: rgba(234, 237, 240, 0.88); }
+
+.add-todo {
+  width: 74vw;
+  border-radius: 16px;
+  background-color: #EAEDF0;
+  background-color: #EAEDF0;
+  box-shadow: 4px 4px 8px #c7c9cc, -4px -4px 8px #ffffff; }
+  .add-todo form {
+    display: flex;
+    flex-direction: column; }
+    .add-todo form textarea {
+      margin: 0 24px 16px 24px;
+      padding: 10px 16px;
+      text-align: center;
+      border: 0;
+      outline: 0;
+      resize: none;
+      font-family: 'NanumSquare', sans-serif;
+      font-weight: 400;
+      font-size: 1.6rem;
+      border-radius: 17px;
+      color: #7D7D7D;
+      background-color: #EAEDF0;
+      box-shadow: inset 4px 4px 8px #c7c9cc, inset -4px -4px 8px #ffffff; }
+    .add-todo form textarea:nth-child(2) {
+      text-align: start; }
+    .add-todo form button {
+      margin: 10px 22px 30px;
+      padding: 10px;
+      text-align: center;
+      border-radius: 50px;
+      color: #b89d0e;
+      background-color: #EAEDF0;
+      box-shadow: 4px 4px 8px #c7c9cc, -4px -4px 8px #ffffff; }
+      .add-todo form button:hover {
+        background-color: #EAEDF0;
+        box-shadow: 2px 2px 7px #c7c9cc, -2px -2px 7px #ffffff;
+        transition-duration: 600ms; }
+      .add-todo form button:active, .add-todo form button:focus {
+        box-shadow: none;
+        transition-duration: 600ms; }
+
+.head {
+  display: flex;
+  justify-content: space-between; }
+  .head h3 {
+    padding: 20px;
+    font-size: 1.6rem;
+    text-align: center; }
+  .head a {
+    padding: 20px; }
+
+/*--------------------------------------IMPORT--------------------------------------*/
+/*----------------------------------------sign----------------------------------------*/
+.sign {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .sign h1 {
+    font-size: 2.4rem;
+    margin-top: 42px;
+    margin-bottom: 62px; }
+  .sign form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    .sign form label {
+      display: none; }
+    .sign form input {
+      margin-bottom: 20px;
+      padding: 0 22px 0 22px;
+      width: 284px;
+      height: 42px;
+      border: none;
+      border-radius: 50px;
+      color: #6B6B6B;
+      background-color: #EAEDF0;
+      box-shadow: inset 4px 4px 8px #c7c9cc, inset -4px -4px 8px #ffffff; }
+      .sign form input::placeholder {
+        font-size: 1.6rem; }
+      .sign form input:focus {
+        outline: 0; }
+    .sign form button {
+      margin-top: 50px;
+      width: 328px;
+      height: 42px;
+      border-radius: 50px;
+      font-size: 1.6rem;
+      text-align: center;
+      background-color: #EAEDF0;
+      box-shadow: 4px 4px 8px #c7c9cc, -4px -4px 8px #ffffff;
+      border: none;
+      outline: 0; }
+      .sign form button:hover {
+        background-color: #EAEDF0;
+        box-shadow: 3px 3px 8px #c7c9cc, -3px -3px 8px #ffffff; }
+      .sign form button:active {
+        background-color: #EAEDF0;
+        box-shadow: 3px 3px 8px #c7c9cc, -3px -3px 8px #ffffff; }
+      .sign form button:focus {
+        background-color: #EAEDF0;
+        box-shadow: 3px 3px 8px #c7c9cc, -3px -3px 8px #ffffff; }
+
+.copyright {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .copyright p {
+    font-size: 1.2rem;
+    color: #9F9F9F; }

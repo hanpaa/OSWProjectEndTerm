@@ -1,0 +1,69 @@
+/*----------------------------------------sign----------------------------------------*/
+  .sign {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1 {
+      font-size: 2.4rem;
+      margin-top: 42px;
+      margin-bottom: 62px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      label {
+        display: none;
+      }
+      input {
+        $p: 22px;
+        $padding:  0 $p 0 $p;
+        margin-bottom: 20px;
+        padding: $padding;
+        width: 328px - ($p + $p);
+        height: 42px;
+        border: none;
+        border-radius: 50px;
+        color: #6B6B6B;
+        @include Neumorphism(4px, -4px, 8px, $inset: inset);
+        &::placeholder {
+          font-size: 1.6rem;
+        }
+        &:focus {
+          outline: 0;
+        }
+      }
+      button {
+        margin-top: 50px;
+        width: 328px;
+        height: 42px;
+        border-radius: 50px;
+        font-size: 1.6rem;
+        text-align: center;
+        @include Neumorphism(4px, -4px, 8px);
+        border: none;
+        outline: 0;
+        &:hover {
+          @include Neumorphism(3px, -3px, 8px);
+        }
+        &:active {
+          @include Neumorphism(3px, -3px, 8px);
+        }
+        &:focus {
+          @include Neumorphism(3px, -3px, 8px);
+        }
+      }
+    }
+  }
+.copyright {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 52px;
+  @include center;
+  p {
+    font-size: 1.2rem;
+    color: #9F9F9F;
+  }
+}
