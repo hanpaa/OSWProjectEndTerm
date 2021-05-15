@@ -1,0 +1,39 @@
+apply plugin: 'idea'
+//and standard one
+apply plugin: 'java'
+apply plugin: 'war'
+
+
+repositories {
+//    # 의존성 라이브러리 저장소 설정 -> Maven 저장소로 변경가능하다
+    jcenter()
+}
+
+//# 의존성 라이브러리 및 패키지등을 정의 하는 곳
+dependencies {
+
+    // This dependency is used internally, and not exposed to consumers on their own compile classpath.
+    implementation 'com.google.guava:guava:23.0'
+
+    // Use JUnit test framework
+//    # JUnit 프레임 워크 라이브러리 추가
+    testImplementation 'junit:junit:4.12'
+//    # 서블릿 api 추가
+    providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
+
+//    # jersey 서블릿 api추가
+    // https://mvnrepository.com/artifact/javax.ws.rs/jsr311-api
+    compile group: 'javax.ws.rs', name: 'jsr311-api', version: '1.1.1'
+
+//    # mysql jdbc api 추가
+    // https://mvnrepository.com/artifact/mysql/mysql-connector-java
+    compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.6'
+//    # jersey 서블릿 컨테이너 api추가
+    // https://mvnrepository.com/artifact/org.glassfish.jersey.containers/jersey-container-servlet
+    compile group: 'org.glassfish.jersey.containers', name: 'jersey-container-servlet', version: '2.24'
+
+//    # jaxb-api 추가 : 객체의 필드를 xml형식의 데이터로 변환해주는 라이브러리
+    // https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api
+    compile group: 'javax.xml.bind', name: 'jaxb-api', version: '2.2.12'
+
+}

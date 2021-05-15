@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/OSWProjectEndTerm.iml" filepath="$PROJECT_DIR$/OSWProjectEndTerm.iml" />
       <module fileurl="file://$PROJECT_DIR$/todofrontend/todofrontend.iml" filepath="$PROJECT_DIR$/todofrontend/todofrontend.iml" />
     </modules>
   </component>
