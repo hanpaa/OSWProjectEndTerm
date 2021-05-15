@@ -1,23 +1,22 @@
 <template>
-    <div class="clock" v-if="hourtime != ''">
+
+    <div class="banner">
         <div class="banner-area">
-            <span class="time js-time" v-text="hourtime"></span>
-            <span v-text="hours"></span>
-            <div class="time js-time" v-text="minutes"></div>
-            <div class="time js-time" v-text="seconds"></div>
+            <div class="time js-time">
+                <h2  v-text="time"/>
+                <p v-text="date"></p>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
-    import { SECOND, HOUR, getHourTime, getZeroPad } from './Filters';
+    import {SECOND, zeroPadding, week} from './Filters';
     export default {
         data() {
             return {
-                hours: 0,
-                minutes: 0,
-                seconds: 0,
-                hourtime: '',
+                time: '',
+                date: ''
             };
         },
         mounted() {
@@ -26,12 +25,9 @@
         },
         methods: {
             updateDateTime() {
-                const now = new Date();
-                this.hours = now.getHours();
-                this.minutes = getZeroPad(now.getMinutes());
-                this.seconds = getZeroPad(now.getSeconds());
-                this.hourtime = getHourTime(this.hours);
-                this.hours = this.hours % HOUR || HOUR;
+                var cd = new Date();
+                this.time = zeroPadding(cd.getHours(), 2) + ':' + zeroPadding(cd.getMinutes(), 2);
+                this.date = zeroPadding(cd.getFullYear(), 4) + '년 ' + zeroPadding(cd.getMonth()+1, 2) + '월 ' + zeroPadding(cd.getDate(), 2) + '일 ' + week[cd.getDay()];
                 this.$options.timer = window.setTimeout(this.updateDateTime, SECOND);
             },
         },

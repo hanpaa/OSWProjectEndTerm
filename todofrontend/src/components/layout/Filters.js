@@ -1,12 +1,13 @@
 export const SECOND = 1000;
 export const HOUR = 12;
+export const week = ['일요일', '월요일', '화요일', '수요일', '목', '금요일', '토요일'];
 
-export function getHourTime (h) {
-    return h >= 12 ? 'PM' : 'AM'
-}
-
-export function getZeroPad (n) {
-    return (parseInt(n, 10) >= 10 ? '' : '0') + n
+export function zeroPadding(num, digit) {
+    var zero = '';
+    for(var i = 0; i < digit; i++) {
+        zero += '0';
+    }
+    return (zero + num).slice(-digit);
 }
 
 
