@@ -15,7 +15,7 @@ public class Todos {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Todo> getUser(@PathParam("userid") String userId){
+    public List<Todo> getUserTodoList(@PathParam("userid") String userId){
         System.out.println("UserID =>get");
         List<Todo> result = null;
         result = service.getTodo(userId);

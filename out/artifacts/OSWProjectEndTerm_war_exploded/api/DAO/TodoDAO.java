@@ -4,10 +4,7 @@ import api.model.Todo;
 import com.sun.xml.internal.bind.v2.TODO;
 
 import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,6 +21,9 @@ public class TodoDAO {
             String id = "root";
             String pw = "chlwpgus123"; // 추후 텍스트 처리
             Class.forName("com.mysql.jdbc.Driver");
+
+            connection = DriverManager.getConnection(
+                    "jdbc:mysql://127.0.0.1:3306/web_programming", id, pw);
 
             System.out.println("mysql connected");
 
@@ -62,7 +62,7 @@ public class TodoDAO {
             todoDTO.setTodoId(rs.getInt("id"));
             todoDTO.setTodo(rs.getString("todo"));
             todoDTO.setIsDone(rs.getInt("isDone"));
-            todoDTO.setDate(rs.getTimestamp("data"));
+            todoDTO.setDate(rs.getTimestamp("date"));
             todoList.add(todoDTO);
         }
         return todoList;
