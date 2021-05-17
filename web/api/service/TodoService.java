@@ -34,30 +34,36 @@ public class TodoService {
     public Todo createTodo(String userId, String todo, String date) throws ParseException {
         Todo result = null;
         Todo dto = null;
+        int isDone = 0;
 
         if(!userId.equals("") && !todo.equals("") && !date.equals("")){
             dto = new Todo();
             dto.setUser(userId);
             dto.setTodo(todo);
+            dto.setIsDone(isDone);
 
             //저장될 날짜 포멧 예시) 2021/05/12
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
             date = dateFormat.format(new Date());
+            Date parsedDate = null;
             try{
-                Date parsedDate = dateFormat.parse(date);
+                parsedDate = dateFormat.parse(date);
             }catch (ParseException e){
                 System.out.println("parse date exception check Todo Service");
                 e.getStackTrace();
             }
-            dto.setDate(date);
+            dto.setDate(parsedDate);
         }
 
+        try{
+            result = dao.createTodoList(dto);
+        }catch (Exception e){
+            System.out.println("createTodo error. check TodoService");
+            e.printStackTrace();
+        }
 
+        return result;
 
-
-
-
-        dto.setDate(date);
     }
 
 }

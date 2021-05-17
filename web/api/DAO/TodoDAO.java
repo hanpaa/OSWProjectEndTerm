@@ -64,10 +64,45 @@ public class TodoDAO {
             todoDTO.setUser(rs.getString("user"));
             todoDTO.setTodo(rs.getString("todo"));
             todoDTO.setIsDone(rs.getInt("isDone"));
-            todoDTO.setDate(rs.getString("date"));
+            todoDTO.setDate(rs.getDate("date"));
+            todoDTO.setGroup(rs.getString("group"));
             todoList.add(todoDTO);
         }
         return todoList;
+    }
+
+    public Todo createTodoList(Todo dto) throws SQLException {
+        String sql = "INSERT INTO web_programming.todos (id, user, todo, isDone, date)"
+                +"VALUES(default, ?, ?, ?, ?)";
+        try{
+            prestate = connection.prepareStatement(sql);
+            prestate.setString(1, dto.getUser());
+            prestate.setString(2, dto.getTodo());
+            prestate.setInt(3, dto.getIsDone());
+            java.sql.Date sqlDate = new java.sql.Date(dto.getDate().getTime());
+            prestate.setDate(4, sqlDate);
+            int excuteResult = prestate.executeUpdate();
+            if(excuteResult < 0){
+                System.out.println("INSERT QUERY fail");
+                return null;
+            }
+            sql = "SELECT * FROM web_programming.todos WHERE id =(SELECT MAX(id) FROM web_programming.todos) ";
+            prestate = connection.prepareStatement(sql);
+            result = prestate.executeQuery();
+            System.out.println("excuted");
+            return getList(result).get(0);
+        }catch (SQLException e){
+            System.out.println("SQL CREATE ERROR check createTodoList");
+            e.printStackTrace();
+        }finally {
+            if(result != null)
+                result.close();
+            if(prestate != null)
+                prestate.close();
+            if(connection != null)
+                connection.close();
+            return null;
+        }
     }
 
 }

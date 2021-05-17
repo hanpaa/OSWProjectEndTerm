@@ -7,6 +7,7 @@ import javax.print.attribute.standard.Media;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.sql.Timestamp;
+import java.text.ParseException;
 import java.util.List;
 
 @Path("/todos/{userid}/todolist")
@@ -38,10 +39,10 @@ public class TodoController {
     @Produces(MediaType.APPLICATION_JSON)
     public Todo createTodo(@FormParam("userid") String userId,
                            @FormParam("todo") String todo,
-                           @FormParam("date") String date){
+                           @FormParam("date") String date) throws ParseException {
         System.out.println("createTodo => @POST");
         Todo result = null;
-
+        result = service.createTodo(userId, todo, date);
         return null;
     }
 
