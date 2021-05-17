@@ -8,7 +8,7 @@ public class Todo {
     private String user;
     private String todo;
     private int isDone;
-    private Timestamp date;
+    private String date;
 
     public String getUser() {
         return user;
@@ -26,11 +26,11 @@ public class Todo {
         this.isDone = isDone;
     }
 
-    public Timestamp getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Timestamp date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

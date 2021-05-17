@@ -55,14 +55,16 @@ public class TodoDAO {
 
     }
 
+    //SQL 데이터를 JSON 형식으로 변환
     public List<Todo> getList(ResultSet rs) throws SQLException{
         List<Todo> todoList = new ArrayList<Todo>();
         while(rs.next()){
             Todo todoDTO = new Todo();
             todoDTO.setTodoId(rs.getInt("id"));
+            todoDTO.setUser(rs.getString("user"));
             todoDTO.setTodo(rs.getString("todo"));
             todoDTO.setIsDone(rs.getInt("isDone"));
-            todoDTO.setDate(rs.getTimestamp("date"));
+            todoDTO.setDate(rs.getString("date"));
             todoList.add(todoDTO);
         }
         return todoList;
