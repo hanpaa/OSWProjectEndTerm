@@ -14,7 +14,7 @@ public class TodoService {
 
     private TodoDAO dao = new TodoDAO();
 
-    public List<Todo> getTodo(String userId){
+    public List<Todo> getTodoService(String userId){
 
         List<Todo> result = null;
         try {
@@ -31,7 +31,7 @@ public class TodoService {
 //    }
 
     //인증 추가 요함.
-    public Todo createTodo(String userId, String todo, String date) throws ParseException {
+    public Todo createTodoService(String userId, String todo, String date) throws ParseException {
         Todo result = null;
         Todo dto = null;
         int isDone = 0;

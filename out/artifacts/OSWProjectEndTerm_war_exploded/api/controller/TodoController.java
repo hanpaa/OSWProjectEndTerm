@@ -3,10 +3,8 @@ package api.controller;
 import api.model.*;
 import api.service.TodoService;
 
-import javax.print.attribute.standard.Media;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
-import java.sql.Timestamp;
 import java.text.ParseException;
 import java.util.List;
 
@@ -20,7 +18,7 @@ public class TodoController {
     public List<Todo> getUserTodoList(@PathParam("userid") String userId){
         System.out.println("UserID =>get");
         List<Todo> result = null;
-        result = service.getTodo(userId);
+        result = service.getTodoService(userId);
         return result;
     }
 
@@ -42,7 +40,7 @@ public class TodoController {
                            @FormParam("date") String date) throws ParseException {
         System.out.println("createTodo => @POST");
         Todo result = null;
-        result = service.createTodo(userId, todo, date);
+        result = service.createTodoService(userId, todo, date);
         return null;
     }
 
