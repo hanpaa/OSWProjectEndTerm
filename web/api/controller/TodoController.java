@@ -40,12 +40,12 @@ public class TodoController {
                            @FormParam("date") String date) throws ParseException {
         System.out.println("createTodo => @POST");
         Todo result = null;
-        result = service.createTodoService(userId, todo, date);
+        service.createTodoService(userId, todo, date);
         return null;
     }
 
 
-    @Path("{id}")
+//    @Path("{id}")
     @PUT
     @Produces(MediaType.APPLICATION_JSON)
     public Todo updateTodo(@FormParam("id") int id,
@@ -54,7 +54,7 @@ public class TodoController {
                            @FormParam("date") String date){
 
         System.out.println("Todo => @PUT");
-        Todo result = null;
+        service.updateTodoService(id, todo, isDone, date);
 
         return null;
     }
@@ -65,7 +65,7 @@ public class TodoController {
     public Todo deleteTodo(@PathParam("id") int id){
 
         System.out.println("Todo delete => @DELETE");
-        List<Todo> reuslt = null;
+        service.deleteTodoService(id);
 
         return null;
 

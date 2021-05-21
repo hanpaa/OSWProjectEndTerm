@@ -71,7 +71,7 @@ public class TodoDAO {
         return todoList;
     }
 
-    public Todo createTodoList(Todo dto) throws SQLException {
+    public void createTodoList(Todo dto) throws SQLException {
         String sql = "INSERT INTO web_programming.todos (id, user, todo, isDone, date)"
                 +"VALUES(default, ?, ?, ?, ?)";
         try{
@@ -84,13 +84,9 @@ public class TodoDAO {
             int excuteResult = prestate.executeUpdate();
             if(excuteResult < 0){
                 System.out.println("INSERT QUERY fail");
-                return null;
+                return;
             }
-            sql = "SELECT * FROM web_programming.todos WHERE id =(SELECT MAX(id) FROM web_programming.todos) ";
-            prestate = connection.prepareStatement(sql);
-            result = prestate.executeQuery();
-            System.out.println("excuted");
-            return getList(result).get(0);
+            System.out.println("create excuted");
         }catch (SQLException e){
             System.out.println("SQL CREATE ERROR check createTodoList");
             e.printStackTrace();
@@ -101,7 +97,62 @@ public class TodoDAO {
                 prestate.close();
             if(connection != null)
                 connection.close();
-            return null;
+            return;
+        }
+    }
+
+    public void updateTodoList(Todo dto) throws SQLException {
+        String sql = "UPDATE web_programming.todos SET todo = ?," +
+                "isDone =?, date = ? WHERE id = ?";
+        try{
+            prestate = connection.prepareStatement(sql);
+            prestate.setString(1, dto.getTodo());
+            prestate.setInt(2, dto.getIsDone());
+            java.sql.Date sqlDate = new java.sql.Date(dto.getDate().getTime());
+            prestate.setDate(3, sqlDate);
+            prestate.setInt(4, dto.getTodoId());
+            int excuteResult = prestate.executeUpdate();
+            if(excuteResult < 0){
+                System.out.println("INSERT QUERY fail");
+                return;
+            }
+            System.out.println("update excuted");
+;        }catch (SQLException e){
+            System.out.println("SQL UPDATE ERROR check createTodoList");
+            e.printStackTrace();
+        }finally {
+            if(result != null)
+                result.close();
+            if(prestate != null)
+                prestate.close();
+            if(connection != null)
+                connection.close();
+            return;
+        }
+    }
+
+    public void deleteTodoList(Todo dto) throws SQLException{
+        String sql = "DELETE FROM web_programming.todos WHERE id =?";
+        try{
+            prestate = connection.prepareStatement(sql);
+            prestate.setInt(1, dto.getTodoId());
+            int excuteResult = prestate.executeUpdate();
+            if(excuteResult < 0){
+                System.out.println("DELETE QUERY fail");
+                return;
+            }
+            System.out.println("delete excuted");
+        }catch (SQLException e){
+            System.out.println("SQL DELETE ERROR check createTodoList");
+            e.printStackTrace();
+        }finally {
+            if(result != null)
+                result.close();
+            if(prestate != null)
+                prestate.close();
+            if(connection != null)
+                connection.close();
+            return;
         }
     }
 

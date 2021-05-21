@@ -31,8 +31,7 @@ public class TodoService {
 //    }
 
     //인증 추가 요함.
-    public Todo createTodoService(String userId, String todo, String date) throws ParseException {
-        Todo result = null;
+    public void createTodoService(String userId, String todo, String date) throws ParseException {
         Todo dto = null;
         int isDone = 0;
 
@@ -42,28 +41,65 @@ public class TodoService {
             dto.setTodo(todo);
             dto.setIsDone(isDone);
 
+            Date parsedDate = this.stringToDate(date);
             //저장될 날짜 포멧 예시) 2021/05/12
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
-            date = dateFormat.format(new Date());
-            Date parsedDate = null;
-            try{
-                parsedDate = dateFormat.parse(date);
-            }catch (ParseException e){
-                System.out.println("parse date exception check Todo Service");
-                e.getStackTrace();
-            }
+
             dto.setDate(parsedDate);
         }
 
         try{
-            result = dao.createTodoList(dto);
+            dao.createTodoList(dto);
         }catch (Exception e){
             System.out.println("createTodo error. check TodoService");
             e.printStackTrace();
         }
 
-        return result;
+        return;
 
+    }
+
+    public void updateTodoService(int id, String todo, int isDone, String date){
+        Todo dto = null;
+
+        dto = new Todo();
+        dto.setTodoId(id);
+        dto.setTodo(todo);
+        dto.setIsDone(isDone);
+        Date parsedDate = this.stringToDate(date);
+        dto.setDate(parsedDate);
+        try{
+            dao.updateTodoList(dto);
+        }catch (Exception e){
+            System.out.println("updateTodo error. check TodoService");
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteTodoService(int id){
+        Todo dto = null;
+
+        dto = new Todo();
+        dto.setTodoId(id);
+        try{
+            dao.deleteTodoList(dto);
+        }catch (Exception e){
+            System.out.println("deleteTodo error. check TodoService");
+            e.printStackTrace();
+        }
+
+    }
+
+    public Date stringToDate(String string){
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+        string = dateFormat.format(new Date());
+        Date parsedDate = null;
+        try{
+            parsedDate = dateFormat.parse(string);
+        }catch (ParseException e){
+            System.out.println("parse date exception check Todo Service");
+            e.getStackTrace();
+        }
+        return parsedDate;
     }
 
 }
