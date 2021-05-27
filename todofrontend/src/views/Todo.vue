@@ -3,7 +3,7 @@
         <div v-for = 'todo in todos' v-bind:key="todo.todoId">
 
             <!--박스반복------------------------------->
-            <div class="box"  v-if="todo.isDone === 0" :id="todo.todoId">
+            <div class="box"  v-if="todo.isDone === 0">
                 <div class="box-contents" >
                     <div class="todo">
                         <div class="todo-title">
@@ -16,7 +16,7 @@
                     </div>
                 </div>
                 <div class="box-setting">
-                    <a href="#" v-on:click="deleteTodo()">
+                    <a href="#" v-on:click="deleteTodo(todo.todoId)" :id="todo.todoId">
                         <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M0.571429 10.6667C0.571429 11.4 1.08571 12 1.71429 12H6.28571C6.91429 12 7.42857 11.4 7.42857 10.6667V4C7.42857 3.26667 6.91429 2.66667 6.28571 2.66667H1.71429C1.08571 2.66667 0.571429 3.26667 0.571429 4V10.6667ZM7.42857 0.666667H6L5.59429 0.193333C5.49143 0.0733333 5.34286 0 5.19429 0H2.80571C2.65714 0 2.50857 0.0733333 2.40571 0.193333L2 0.666667H0.571429C0.257143 0.666667 0 0.966667 0 1.33333C0 1.7 0.257143 2 0.571429 2H7.42857C7.74286 2 8 1.7 8 1.33333C8 0.966667 7.74286 0.666667 7.42857 0.666667Z" fill="#898989"/>
                         </svg>
@@ -51,13 +51,20 @@
         methods: {
             loadTodo(){
                 // this.getTodo()
-                axios.get('/api/todos/' + "s85737 " + '/todolist')
+                axios.get('/api/todos/' + "s85737" + '/todolist')
                     .then(response =>{
                         this.todos = response.data;
                     })
                     .catch(error => console.log(error));
             },
-            deleteTodo(){
+            deleteTodo(todoId){
+
+                axios.delete('/api/todos/' + "s85737" + '/todolist/' + todoId)
+                    .then(response =>{
+                        console.log(todoId+"번 TODO 삭제" + response);
+                    })
+                .catch(error => console.log(error));
+                this.$router.go();
 
             }
         }

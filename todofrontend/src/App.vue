@@ -2,7 +2,6 @@
   <div id="app">
     <Header/>
     <Banner/>
-
     <article class="list">
       <div class="list-area">
         <div class="todo-list-sort">
