@@ -11,8 +11,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MyToDo</title>
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
 <%
@@ -138,8 +138,8 @@
   }
 </script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="js/listinclude.js"></script>
-<script src="../todofrontend/src/assets/clock.js"></script>
-<script src="js/AddPopup.js"></script>
+<script src="./js/listinclude.js"></script>
+<script src="./js/clock.js"></script>
+<script src="./js/AddPopup.js"></script>
 </body>
 </html>

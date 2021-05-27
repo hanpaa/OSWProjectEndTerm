@@ -24,9 +24,11 @@
                     </a>
                 </div>
                 <form>
-                    <textarea name="text" rows="1" cols="10" wrap="soft" placeholder="언제까지 할꺼야"></textarea>
-                    <textarea name="text" rows="5" cols="10" wrap="soft" placeholder="메모"></textarea>
-                    <button type="submit">확인</button>
+                    <div>
+                        <b-form-datepicker id="datepicker" v-model="value" class="mb-2"></b-form-datepicker>
+                    </div>
+                    <textarea name="text" rows="5" cols="10" wrap="soft" placeholder="메모" v-model="todo"></textarea>
+                    <button type="button" v-on:click="createTodo(value, todo)">확인</button>
                 </form>
             </div>
         </div>
@@ -36,18 +38,40 @@
 </template>
 
 <script>
+    import axios from "axios";
+
     export default {
         name: "Footer",
+        data(){
+            return{
+                value: '',
+                todo: ''
+            }
+        },
         methods:{
-            openPopUp: function () {
+            openPopUp() {
                 const popup = document.querySelector(".popup");
                 setTimeout(function(){ popup.style.display = "flex"; }, 500);
             },
-            closePopUp: function () {
+            closePopUp() {
                 const popup = document.querySelector(".popup");
                 popup.style.display = "none";
+            },
+            createTodo(value, todo){
+                const params = new URLSearchParams();
+                params.append('todo', todo);
+                params.append('date', value);
+
+                axios.post('/api/todos/' + "s85737" + '/todolist', params)
+                    .then(response =>{
+                        console.log(todo+"추가" + response);
+                    })
+                    .catch(error => console.log(error));
+                this.closePopUp();
+                this.$router.go();
             }
             }
+
         }
 </script>
 

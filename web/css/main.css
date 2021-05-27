@@ -159,7 +159,7 @@ button, input {
             align-items: center; }
 
 /*-------------------------------------bottom nav-------------------------------------*/
-.nav {
+.nav: {
   position: fixed;
   bottom: 0;
   left: 0;
