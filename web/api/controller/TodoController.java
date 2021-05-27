@@ -35,7 +35,7 @@ public class TodoController {
     //POST 로 받은 생성 요청 연결
     @POST
     @Produces(MediaType.APPLICATION_JSON)
-    public Todo createTodo(@FormParam("userid") String userId,
+    public Todo createTodo(@PathParam("userid") String userId,
                            @FormParam("todo") String todo,
                            @FormParam("date") String date) throws ParseException {
         System.out.println("createTodo => @POST");

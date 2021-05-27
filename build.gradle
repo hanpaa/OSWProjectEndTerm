@@ -40,7 +40,9 @@ dependencies {
 // https://mvnrepository.com/artifact/com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider
     implementation group: 'com.fasterxml.jackson.jaxrs', name: 'jackson-jaxrs-json-provider', version: '2.6.1'
 
-    
+    // https://mvnrepository.com/artifact/org.glassfish.jersey.core/jersey-common
+    implementation group: 'org.glassfish.jersey.core', name: 'jersey-common', version: '2.34'
+
 
 
 

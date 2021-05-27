@@ -2,9 +2,18 @@
   <div id="app">
     <Header/>
     <Banner/>
-    <div id="content" class="content">
-      <router-view></router-view>
-    </div>
+
+    <article class="list">
+      <div class="list-area">
+        <div class="todo-list-sort">
+          <div class="sort-method">
+          </div>
+        </div>
+        <div class="todo-list" id="listinclude">
+          <router-view></router-view>
+        </div>
+      </div>
+    </article>
     <Footer/>
   </div>
 </template>

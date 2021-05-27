@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%@ page import="java.io.PrintWriter" %>
+<%@ page import="java.net.HttpURLConnection" %>
+<%@ page import="java.net.URL" %>
+<%@ page import="java.io.BufferedReader" %>
+<%@ page import="java.io.InputStreamReader" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -16,6 +20,26 @@
   if(session.getAttribute("userID")!=null){
     userID=(String)session.getAttribute("userID");
   }
+//
+//  URL url = new URL("http://localhost:8081/api/todos/s85737/todolist/");
+//  HttpURLConnection con = (HttpURLConnection) url.openConnection();
+//  con.setRequestMethod("GET"); //기본적으로 조회 시 사용되는 GET
+//
+//  int status = con.getResponseCode();
+//  BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+//  String inputLine;
+//  StringBuffer content = new StringBuffer();
+//
+//  while((inputLine = in.readLine()) != null)
+//    content.append(inputLine);
+//
+//  in.close();
+//  con.disconnect();
+//
+//  System.out.println("Response status: " + status);
+//  System.out.println(content.toString());
+
+
 %>
 
 <div id="wrap">

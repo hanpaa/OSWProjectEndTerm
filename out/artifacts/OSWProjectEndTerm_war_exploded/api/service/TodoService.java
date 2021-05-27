@@ -90,8 +90,7 @@ public class TodoService {
     }
 
     public Date stringToDate(String string){
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
-        string = dateFormat.format(new Date());
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date parsedDate = null;
         try{
             parsedDate = dateFormat.parse(string);
