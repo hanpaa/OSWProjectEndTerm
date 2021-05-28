@@ -200,10 +200,10 @@ button, input {
   background-color: #EAEDF0;
   background-color: #EAEDF0;
   box-shadow: 4px 4px 8px #c7c9cc, -4px -4px 8px #ffffff; }
-  .add-todo form {
+  .add-todo add-todo-form {
     display: flex;
     flex-direction: column; }
-    .add-todo form textarea {
+    .add-todo add-todo-form textarea {
       margin: 0 24px 16px 24px;
       padding: 10px 16px;
       text-align: center;
@@ -217,9 +217,9 @@ button, input {
       color: #7D7D7D;
       background-color: #EAEDF0;
       box-shadow: inset 4px 4px 8px #c7c9cc, inset -4px -4px 8px #ffffff; }
-    .add-todo form textarea:nth-child(2) {
+    .add-todo add-todo-form textarea:nth-child(2) {
       text-align: start; }
-    .add-todo form button {
+    .add-todo add-todo-form button {
       margin: 10px 22px 30px;
       padding: 10px;
       text-align: center;
@@ -227,11 +227,11 @@ button, input {
       color: #b89d0e;
       background-color: #EAEDF0;
       box-shadow: 4px 4px 8px #c7c9cc, -4px -4px 8px #ffffff; }
-      .add-todo form button:hover {
+      .add-todo add-todo-form add-todo-button:hover {
         background-color: #EAEDF0;
         box-shadow: 2px 2px 7px #c7c9cc, -2px -2px 7px #ffffff;
         transition-duration: 600ms; }
-      .add-todo form button:active, .add-todo form button:focus {
+      .add-todo add-todo-form add-todo-button:active, .add-todo add-todo-form add-todo-button:focus {
         box-shadow: none;
         transition-duration: 600ms; }
 

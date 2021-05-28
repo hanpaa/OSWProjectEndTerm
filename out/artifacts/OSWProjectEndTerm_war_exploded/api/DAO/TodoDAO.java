@@ -23,7 +23,7 @@ public class TodoDAO {
             Class.forName("com.mysql.jdbc.Driver");
 
             connection = DriverManager.getConnection(
-                    "jdbc:mysql://127.0.0.1:3306/web_programming", id, pw);
+                    "jdbc:mysql://127.0.0.1:3306/web_programming?useUnicode=true&characterEncoding=utf8", id, pw);
 
             System.out.println("mysql connected");
 

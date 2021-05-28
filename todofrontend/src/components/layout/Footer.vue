@@ -16,19 +16,20 @@
         <div class="popup">
             <div class="add-todo">
                 <div class="head">
-                    <h3>Name</h3>
+                    <h3>할일 입력</h3>
                     <a href="#" v-on:click="closePopUp"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M11.5 1L1 11.5" stroke="#979797" stroke-width="2"/>
                         <path d="M1 1L11.5 11.5" stroke="#979797" stroke-width="2"/>
                     </svg>
                     </a>
                 </div>
-                <form>
-                    <div>
-                        <b-form-datepicker id="datepicker" v-model="value" class="mb-2"></b-form-datepicker>
-                    </div>
+                <div>
+                        <b-form-datepicker id="datepicker" v-model="value" class="mb-2" style="font-size: 20px"></b-form-datepicker>
+
+                </div>
+                <form class="add-todo-form">
                     <textarea name="text" rows="5" cols="10" wrap="soft" placeholder="메모" v-model="todo"></textarea>
-                    <button type="button" v-on:click="createTodo(value, todo)">확인</button>
+                    <button class="add-todo-Button" type="button" v-on:click="createTodo(value, todo)">확인</button>
                 </form>
             </div>
         </div>
