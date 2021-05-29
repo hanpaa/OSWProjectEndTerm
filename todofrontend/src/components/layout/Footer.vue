@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div v-if="this.$userId">
 
         <footer class="nav" id="nav">
             <div class="nav-area">

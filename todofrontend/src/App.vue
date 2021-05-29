@@ -14,7 +14,12 @@
         </div>
         <div class="todo-list" id="listinclude">
           <router-view></router-view>
+          <div class="box" v-if="this.$userId === null">
+            <div class="box-contents">
+              <h2 class="warning">로그인해주세요</h2>
+            </div>
         </div>
+      </div>
       </div>
     </article>
     <Footer/>

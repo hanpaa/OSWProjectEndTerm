@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href=./css/reset.css">
+	<link rel="stylesheet" href="./css/reset.css">
 	<link rel="stylesheet" href="./css/main.css">
  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <title>MyToDo</title>
@@ -16,9 +16,14 @@
 <body>
  	<!--Header-->
 	<header class="header">
-		<div class ="header-area">
-			<h1><a class="logo" href="http://osw8team.kro.kr:8080/">MyToDo</a></h1>
+		<div class="header-area">
+
+			<div class="logo">
+				<h1><a href="http://localhost:8080/">MyTodo</a></h1>
+			</div>
+
 		</div>
+
 	</header>
 	<!--info-->
 	<div class="sign">
