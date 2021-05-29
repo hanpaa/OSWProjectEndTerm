@@ -9,9 +9,21 @@
 <body>
 	<%
 		session.invalidate();//현재 이 페이지에 접속한 회원이 세션을 빼앗기도록
+		Cookie[] cookies = request.getCookies();
+		if(cookies != null){
+			for(int i=0; i < cookies.length; i++){
+
+				// 쿠키의 유효시간을 0으로 설정하여 만료시킨다
+				cookies[i].setMaxAge(0) ;
+
+				// 응답 헤더에 추가한다
+				response.addCookie(cookies[i]) ;
+			}
+		}
+
 	%>
 	<script>
-		location.href="index.jsp";//세션 해제 후 index페이지로 이동
+		location.href="http://localhost:8080/";//세션 해제 후 index페이지로 이동
 	</script>
 </body>
 </html>

@@ -6,16 +6,16 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 public class UserDAO {
-	
+
 	private Connection conn;//데이터베이스에 접근하게 해주는 하나의 객체
 	private PreparedStatement pstmt;//
 	private ResultSet rs;//정보를 담을 수 있는 객체
-	
+
 	public UserDAO() {//mysql에 접속을 하게 해줌,자동으로 데이터베이스 커넥션이 일어남
 		try {//예외처리
-			String dbURL = "jdbc:mysql://localhost:3306/BBS";
+			String dbURL = "jdbc:mysql://localhost:3306/bbs";
 			String dbID="root";
-			String dbPasseord="parkms00*";
+			String dbPasseord="chlwpgus123";
 			Class.forName("com.mysql.jdbc.Driver");//mysql드라이버를 찾는다.
 			//드라이버는 mysql에 접속할 수 있도록 매개체 역할을 하는 하나의 라이브러리
 			conn=DriverManager.getConnection(dbURL,dbID,dbPasseord);
@@ -23,7 +23,7 @@ public class UserDAO {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public int login(String userID, String userPassword) {//로그인을 시도하는 함수
 		String SQL="SELECT userPassword FROM USER WHERE userID = ?";
 		try {
@@ -43,7 +43,7 @@ public class UserDAO {
 		return -2; //데이터베이스 오류
 	}
 
-	
+
 	public int join(User user) {
 		String SQL = "INSERT INTO USER VALUES (?,?,?,?)";//총 네개의 값이 들어갈 수 있도록 한다.
 		try {//insert문장의 결과는 0이상의 숫자가 발현되기 떄문에 -1이 아닌경우는 성공적인 회원가입이 이뤄졌다.

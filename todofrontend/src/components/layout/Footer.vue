@@ -69,6 +69,7 @@
                     })
                     .catch(error => console.log(error));
                 this.closePopUp();
+
                 this.$router.go();
             }
             }

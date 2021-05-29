@@ -20,6 +20,19 @@ import './assets/css/main.css'
 
 Vue.config.productionTip = false
 
+
+var getCookie = function(name) {
+  var value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+  return value? value[2] : null;
+};
+
+if(getCookie("userId")){
+  Vue.prototype.$userId = getCookie("userId");
+}else{
+  Vue.prototype.$userId = null;
+}
+
+
 new Vue({
   router,
   render: h => h(App),

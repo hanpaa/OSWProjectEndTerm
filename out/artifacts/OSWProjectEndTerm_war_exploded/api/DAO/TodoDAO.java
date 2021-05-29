@@ -142,6 +142,16 @@ public class TodoDAO {
                 return;
             }
             System.out.println("delete excuted");
+//            sql =   "SET sql_safe_updates=0;"+
+//                    "ALTER TABLE web_programming.todos AUTO_INCREMENT=1;" +
+//                    "SET @COUNT = 0;" +
+//                    "UPDATE web_programming.todos SET id = @COUNT:=@COUNT+1;";
+//            prestate = connection.prepareStatement(sql);
+//            excuteResult = prestate.executeUpdate();
+//            if(excuteResult < 0){
+//                System.out.println("autoIncreasement fail");
+//                return;
+//            }
         }catch (SQLException e){
             System.out.println("SQL DELETE ERROR check createTodoList");
             e.printStackTrace();

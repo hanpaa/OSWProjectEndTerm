@@ -4,7 +4,7 @@
 <%@ page import="java.io.PrintWriter" %>
 <% request.setCharacterEncoding("UTF-8"); %>
 <jsp:useBean id="user" class="user.User" scope="page"></jsp:useBean>
-<jsp:setProperty name="user" property="userID"/> 
+<jsp:setProperty name="user" property="userID"/>
 <jsp:setProperty name="user" property="userPassword" />
 <!DOCTYPE html>
 <html>
@@ -25,14 +25,18 @@
 			script.println("location.href='index.jsp'");
 			script.println("</script>");
 		}
-		
+
 		UserDAO userDAO=new UserDAO();//하나의 인스턴스
 		int result=userDAO.login(user.getUserID(), user.getUserPassword());//페이지에 입력된 아이디와 비번을 login함수에 넣어줌
 		if(result==1){
 			session.setAttribute("userID",user.getUserID());//세션부여 / userID에 user.getUserID()를 부여한다.
 			PrintWriter script=response.getWriter();
+			Cookie cookie = new Cookie("userId", user.getUserID());
+			cookie.setMaxAge(30*60*1);
+			response.addCookie(cookie);
+//			Cookie groupCookie = new Cookie("group", user.getGroup());
 			script.println("<script>");
-			script.println("location.href='index.jsp'");//로그인에 성공하면 index페이지로
+			script.println("location.href='http://localhost:8080/'");//로그인에 성공하면 index페이지로
 			script.println("</script>");
 		}
 		else if(result==0){

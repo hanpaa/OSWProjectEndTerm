@@ -7,10 +7,18 @@
             <div class="logo">
                 <h1><a href="#">MyTodo</a></h1>
             </div>
-            <div class="login">
+
+            <div class="login" v-if="this.$userId === null">
                 <a href="http://localhost:8081/login.jsp">Login</a>
-                <a href="http://localhost:8081/signup.jsp">Sign up</a>
+                <a href="http://localhost:8081/join.jsp">Sign up</a>
             </div>
+
+
+            <div class="login" v-if="this.$userId">
+                <a href="http://localhost:8081/logoutAction.jsp">Logout</a>
+            </div>
+
+
         </div>
 
     </header>

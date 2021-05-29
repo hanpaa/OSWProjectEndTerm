@@ -22,10 +22,10 @@ public class TodoController {
         return result;
     }
 
-    @Path("{isdone}")
+    @Path("{isDone}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Todo getAlreadyDoneTodo(@PathParam("isdone")String isDone){
+    public Todo getAlreadyDoneTodo(@PathParam("isDone")String isDone){
         System.out.println("isDone => @get");
         Todo result = null;
 
@@ -50,7 +50,7 @@ public class TodoController {
     @Produces(MediaType.APPLICATION_JSON)
     public Todo updateTodo(@FormParam("id") int id,
                            @FormParam("todo") String todo,
-                           @FormParam("isdone") int isDone,
+                           @FormParam("isDone") int isDone,
                            @FormParam("date") String date){
 
         System.out.println("Todo => @PUT");

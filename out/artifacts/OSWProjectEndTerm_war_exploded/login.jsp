@@ -17,7 +17,7 @@
  	<!--Header-->
 	<header class="header">
 		<div class ="header-area">
-			<h1><a class="logo" href="http://localhost:8080">MyToDo</a></h1>
+			<h1><a class="logo" href="http://osw8team.kro.kr:8080/">MyToDo</a></h1>
 		</div>
 	</header>
 	<!--info-->
