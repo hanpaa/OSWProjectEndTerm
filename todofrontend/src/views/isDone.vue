@@ -7,7 +7,10 @@
                 <div class="box-contents" >
                     <div class="todo">
                         <div class="todo-title">
-                            <!--                            <img src="img/profile/verygood.jpg" alt="profile">-->
+                            <img src="../assets/Gray.png" alt="profile"  v-if="todo.priority === 0">
+                            <img src="../assets/black.png" alt="profile"  v-if="todo.priority === 1">
+                            <img src="../assets/colar.png" alt="profile"  v-if="todo.priority === 2">
+                            <img src="../assets/red.png" alt="profile"  v-if="todo.priority === 3">
                             <h3>{{todo.date}}</h3>
                         </div>
                         <div class="todo-text" v-if="todo.priority === 0" style="color: #9F9F9F">
