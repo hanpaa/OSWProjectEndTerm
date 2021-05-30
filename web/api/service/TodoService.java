@@ -58,7 +58,7 @@ public class TodoService {
 
     }
 
-    public void updateTodoService(int id, String todo, int isDone, String date){
+    public void updateTodoService(int id, String todo, int isDone, String date, int priority){
         Todo dto = null;
 
         dto = new Todo();
@@ -67,6 +67,7 @@ public class TodoService {
         dto.setIsDone(isDone);
         Date parsedDate = this.stringToDate(date);
         dto.setDate(parsedDate);
+        dto.setPriority(priority);
         try{
             dao.updateTodoList(dto);
         }catch (Exception e){

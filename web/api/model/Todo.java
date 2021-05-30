@@ -17,6 +17,15 @@ public class Todo {
     private int isDone;
     private Date date;
     private String group;
+    private int priority;
+
+    public int getPriority() {
+        return priority;
+    }
+
+    public void setPriority(int priority) {
+        this.priority = priority;
+    }
 
     public String getGroup() {
         return group;

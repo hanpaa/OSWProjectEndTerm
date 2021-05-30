@@ -22,7 +22,7 @@
 			PrintWriter script=response.getWriter();
 			script.println("<script>");
 			script.println("alert('이미 로그인이 되어있습니다.')");
-			script.println("location.href='index.jsp'");
+			script.println("location.href='http://localhost:8080/'");
 			script.println("</script>");
 		}
 
@@ -32,7 +32,7 @@
 			session.setAttribute("userID",user.getUserID());//세션부여 / userID에 user.getUserID()를 부여한다.
 			PrintWriter script=response.getWriter();
 			Cookie cookie = new Cookie("userId", user.getUserID());
-			cookie.setMaxAge(30*60*1);
+			cookie.setMaxAge(60*60*2);
 			response.addCookie(cookie);
 //			Cookie groupCookie = new Cookie("group", user.getGroup());
 			script.println("<script>");

@@ -51,13 +51,16 @@ public class TodoController {
     public Todo updateTodo(@FormParam("id") int id,
                            @FormParam("todo") String todo,
                            @FormParam("isDone") int isDone,
-                           @FormParam("date") String date){
+                           @FormParam("date") String date,
+                           @FormParam("priority") int priority){
 
         System.out.println("Todo => @PUT");
-        service.updateTodoService(id, todo, isDone, date);
+        service.updateTodoService(id, todo, isDone, date, priority);
 
         return null;
     }
+
+
 
     @Path("{id}")
     @DELETE

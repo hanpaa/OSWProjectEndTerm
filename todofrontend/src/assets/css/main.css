@@ -150,7 +150,8 @@ button, input {
             padding: 6px; }
             .list .list-area .todo-list .box .box-contents .todo .todo-text p {
               font-size: 1.8rem;
-              line-height: 2.4rem; }
+              line-height: 2.4rem;
+              font-weight: bold;}
           .list .list-area .todo-list .box .box-contents .checkbox {
             padding: 0 6px;
             display: flex;

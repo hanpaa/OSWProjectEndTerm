@@ -35,7 +35,7 @@ public class TodoDAO {
     }
 
     public List<Todo> getTodoList(String userId) throws SQLException{
-        String sql = "SELECT * FROM web_programming.todos WHERE user=?";
+        String sql = "SELECT * FROM web_programming.todos WHERE user=? ORDER BY date ASC";
         List<Todo> todoList = null;
 
         try {
@@ -66,6 +66,7 @@ public class TodoDAO {
             todoDTO.setIsDone(rs.getInt("isDone"));
             todoDTO.setDate(rs.getDate("date"));
             todoDTO.setGroup(rs.getString("group"));
+            todoDTO.setPriority(rs.getInt("priority"));
             todoList.add(todoDTO);
         }
         return todoList;
@@ -103,14 +104,16 @@ public class TodoDAO {
 
     public void updateTodoList(Todo dto) throws SQLException {
         String sql = "UPDATE web_programming.todos SET todo = ?," +
-                "isDone =?, date = ? WHERE id = ?";
+                "isDone =?, date = ?, priority = ? WHERE id = ?";
         try{
             prestate = connection.prepareStatement(sql);
             prestate.setString(1, dto.getTodo());
             prestate.setInt(2, dto.getIsDone());
             java.sql.Date sqlDate = new java.sql.Date(dto.getDate().getTime());
             prestate.setDate(3, sqlDate);
-            prestate.setInt(4, dto.getTodoId());
+            prestate.setInt(4, dto.getPriority());
+            prestate.setInt(5, dto.getTodoId());
+
             int excuteResult = prestate.executeUpdate();
             if(excuteResult < 0){
                 System.out.println("INSERT QUERY fail");

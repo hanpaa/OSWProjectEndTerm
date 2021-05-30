@@ -70,7 +70,11 @@
                     .catch(error => console.log(error));
                 this.closePopUp();
 
-                this.$router.go();
+                this.$router.push('todo');
+                this.$router.push('todo');
+
+
+
             }
             }
 
