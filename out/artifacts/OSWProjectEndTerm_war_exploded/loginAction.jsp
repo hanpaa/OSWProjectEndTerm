@@ -32,7 +32,7 @@
 			session.setAttribute("userID",user.getUserID());//세션부여 / userID에 user.getUserID()를 부여한다.
 			PrintWriter script=response.getWriter();
 			Cookie cookie = new Cookie("userId", user.getUserID());
-			cookie.setMaxAge(60*60*2);
+			cookie.setMaxAge(60*60*4);
 			response.addCookie(cookie);
 //			Cookie groupCookie = new Cookie("group", user.getGroup());
 			script.println("<script>");
