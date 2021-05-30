@@ -19,7 +19,7 @@
 		<div class="header-area">
 
 			<div class="logo">
-				<h1><a href="http://localhost:8080/">MyTodo</a></h1>
+				<h1><a href="http://osw8team.kro.kr:8080/">MyTodo</a></h1>
 			</div>
 
 		</div>

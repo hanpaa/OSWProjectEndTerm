@@ -1,5 +1,6 @@
+<%@ page import="java.io.PrintWriter" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+		 pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,11 +20,19 @@
 				// 응답 헤더에 추가한다
 				response.addCookie(cookies[i]) ;
 			}
+			PrintWriter script=response.getWriter();
+
+			script.println("<script>");
+			script.println("alert('로그아웃 되었습니다.')");
+			script.println("location.href='http://osw8team.kro.kr:8080/'");
+			script.println("</script>");
+
 		}
+
 
 	%>
 	<script>
-		location.href="http://localhost:8080/";//세션 해제 후 index페이지로 이동
+		// location.href="http:/osw8team.kro.kr:8080/";//세션 해제 후 index페이지로 이동
 	</script>
 </body>
 </html>

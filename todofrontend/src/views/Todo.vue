@@ -65,10 +65,10 @@
     export default {
         data(){
             return{
-                todos: []
+                todos: [],
             };
         },
-        created(){
+        mounted(){
             this.loadTodo();
         },
         // updated(){

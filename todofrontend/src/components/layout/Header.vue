@@ -9,13 +9,13 @@
             </div>
 
             <div class="login" v-if="this.$userId === null">
-                <a href="http://localhost:8081/login.jsp">Login</a>
-                <a href="http://localhost:8081/join.jsp">Sign up</a>
+                <a href="http://osw8team.kro.kr:8081/login.jsp">Login</a>
+                <a href="http://osw8team.kro.kr:8081/join.jsp">Sign up</a>
             </div>
 
 
             <div class="login" v-if="this.$userId">
-                <a href="http://localhost:8081/logoutAction.jsp">Logout</a>
+                <a href="http://osw8team.kro.kr:8081/logoutAction.jsp">Logout</a>
             </div>
 
 

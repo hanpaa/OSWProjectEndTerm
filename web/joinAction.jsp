@@ -24,7 +24,7 @@
 			PrintWriter script=response.getWriter();
 			script.println("<script>");
 			script.println("alert('이미 로그인이 되어있습니다.')");
-			script.println("location.href='http://localhost:8080/'");
+			script.println("location.href='http://osw8team.kro.kr:8080/'");
 			script.println("</script>");
 		}
 
@@ -49,7 +49,12 @@
 				PrintWriter script=response.getWriter();
 				script.println("<script>");
 				//다시 프론트 서버로
-				script.println("location.href='http://localhost:8080/'");
+
+				Cookie cookie = new Cookie("userId", user.getUserID());
+				cookie.setMaxAge(60*60*4);
+				response.addCookie(cookie);
+
+				script.println("location.href='http://osw8team.kro.kr:8080/'");
 				script.println("</script>");
 			}
 		}

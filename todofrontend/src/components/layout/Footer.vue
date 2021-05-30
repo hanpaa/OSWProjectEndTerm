@@ -46,7 +46,7 @@
         data(){
             return{
                 value: '',
-                todo: ''
+                todo: '',
             }
         },
         methods:{
@@ -63,18 +63,14 @@
                 params.append('todo', todo);
                 params.append('date', value);
 
-                axios.post('/api/todos/' + "s85737" + '/todolist', params)
+                axios.post('/api/todos/' + this.$userId + '/todolist', params)
                     .then(response =>{
                         console.log(todo+"추가" + response);
                     })
                     .catch(error => console.log(error));
                 this.closePopUp();
 
-                this.$router.push('todo');
-                this.$router.push('todo');
-
-
-
+                this.$router.go();
             }
             }
 
