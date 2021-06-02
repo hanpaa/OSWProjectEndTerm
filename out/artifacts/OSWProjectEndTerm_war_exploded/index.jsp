@@ -50,7 +50,7 @@
   <header class="header">
     <div class="header-area">
       <div class="logo">
-        <h1><a href="index.jsp">MyTodo</a></h1>
+        <h1><a href="http://osw8team.kro.kr:8080/">MyTodo</a></h1>
       </div>
       <div class="login">
         <a href="login.jsp">Login</a>
@@ -65,9 +65,10 @@
   <header class="header">
     <div class="header-area">
       <div class="logo">
-        <h1><a href="index.jsp">MyTodo</a></h1>
+        <h1><a href="http://osw8team.kro.kr:8080/">MyTodo</a></h1>
       </div>
       <div class="login">
+        <a href="bbs.jsp" style="padding: 16px; font-size: 1.4rem; color: #b89d0e;">Board</a>
         <a href="logoutAction.jsp">로그아웃</a>
       </div>
     </div>
