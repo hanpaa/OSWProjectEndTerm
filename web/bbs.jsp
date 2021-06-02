@@ -39,7 +39,7 @@
   <header class="header">
     <div class="header-area">
       <div class="logo" >
-      	<h1><a href="http:osw8team.kro.kr:8080/">MyTodo</a></h1>
+      	<h1><a href="http://osw8team.kro.kr:8080/">MyTodo</a></h1>
       </div>
       <div class="login">
        <a href="bbs.jsp" style="padding: 16px; font-size: 1.4rem; color: #b89d0e;">Board</a>
@@ -55,7 +55,7 @@
   <header class="header">
     <div class="header-area">
       <div class="logo">
-          <h1><a href="http:osw8team.kro.kr:8080/">MyTodo</a></h1>
+          <h1><a href="http://osw8team.kro.kr:8080/">MyTodo</a></h1>
       </div>
       <div class="login">
         <a href="bbs.jsp" style="padding: 16px; font-size: 1.4rem; color: #b89d0e;">Board</a>
@@ -66,6 +66,16 @@
   <%
     }
   %>
+
+<%--  <!--Banner-->--%>
+<%--  <div class="banner">--%>
+<%--    <div class="banner-area">--%>
+<%--      <div class="time js-time">--%>
+<%--        <h2>00:00</h2>--%>
+<%--        <p>2021년 6월 18일 금요일</p>--%>
+<%--      </div>--%>
+<%--    </div>--%>
+<%--  </div>--%>
 
   <div class="container">
         <div class="row">
