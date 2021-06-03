@@ -42,7 +42,7 @@
   <header class="header">
     <div class="header-area">
       <div class="logo">
-        <h1><a href="index.jsp">MyTodo</a></h1>
+          <h1><a href="http://osw8team.kro.kr:8080/">MyTodo</a></h1>
       </div>
       <div class="login">
         <a href="login.jsp">Login</a>
@@ -57,7 +57,7 @@
   <header class="header">
     <div class="header-area">
       <div class="logo">
-        <h1><a href="index.jsp">MyTodo</a></h1>
+          <h1><a href="http://osw8team.kro.kr:8080/">MyTodo</a></h1>
       </div>
       <div class="login">
         <a href="bbs.jsp" style="padding: 16px; font-size: 1.4rem; color: #b89d0e;">Board</a>
@@ -69,17 +69,8 @@
     }
   %>
 
-  <!--Banner-->
-  <div class="banner">
-    <div class="banner-area">
-      <div class="time js-time">
-        <h2>00:00</h2>
-        <p>2021년 6월 18일 금요일</p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="container"> 
+
+  <div class="container">
         <div class="row" style="font-size: 14px;">
             <table class="table table-striped" style="text-align:center; border:1px solid #dddddd;">
                 <thead>
@@ -94,17 +85,17 @@
                     </tr>
                     <tr>
                         <td>작성자</td>
-                        <td colspan="2"><%= bbs.getUserID() %></td>                        
+                        <td colspan="2"><%= bbs.getUserID() %></td>
                     </tr>
                     <tr>
                         <td>작성일자</td>
-                        <td colspan="2"><%= bbs.getBbsDate().substring(0,11) + bbs.getBbsDate().substring(11, 13) + "시" 
+                        <td colspan="2"><%= bbs.getBbsDate().substring(0,11) + bbs.getBbsDate().substring(11, 13) + "시"
                                 + bbs.getBbsDate().substring(14,16) + "분"  %></td>
                     </tr>
                     <tr>
                         <td>내용</td>
                         <td colspan="2" style="min-height:200px; text-align:left;">
-                        <%= bbs.getBbsContent().replaceAll(" ","&nbsp;").replaceAll("<","&lt;").replaceAll(">", "&gt;").replaceAll("\n","<br>") %></td>    
+                        <%= bbs.getBbsContent().replaceAll(" ","&nbsp;").replaceAll("<","&lt;").replaceAll(">", "&gt;").replaceAll("\n","<br>") %></td>
                     </tr>
                 </tbody>
             </table>
