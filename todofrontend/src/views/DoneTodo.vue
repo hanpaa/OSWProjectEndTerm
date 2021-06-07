@@ -6,10 +6,10 @@
                 <div class="todo">
                     <div class="todo-title">
                         <img src="img/profile/verygood.jpg" alt="profile">
-                        <h3>2/7 까지</h3>
+                        <h3>까지</h3>
                     </div>
                     <div class="todo-text">
-                        <p>콘텐츠 까지 작업</p>
+                        <p>까지 작업</p>
                     </div>
                 </div>
                 <div class="checkbox">

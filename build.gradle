@@ -23,11 +23,9 @@ dependencies {
 //    # 서블릿 api 추가
     providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
 
-//    # mysql jdbc api 추가
     // https://mvnrepository.com/artifact/mysql/mysql-connector-java
     compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.6'
 
-//    # jersey 서블릿 컨테이너 api추가
 // https://mvnrepository.com/artifact/org.glassfish.jersey.containers/jersey-container-servlet
     compile 'org.glassfish.jersey.containers:jersey-container-servlet:2.6'
 
