@@ -3,6 +3,7 @@
         <div v-for = 'todo in todos' v-bind:key="todo.todoId">
 
             <!--박스반복------------------------------->
+<!--            아직 안한것만 출력!!!-->
             <div class="box"  v-if="todo.isDone === 0">
                 <div class="box-contents" >
                     <div class="todo">
@@ -11,6 +12,8 @@
                             <img src="../assets/black.png" alt="profile"  v-if="todo.priority === 1">
                             <img src="../assets/colar.png" alt="profile"  v-if="todo.priority === 2">
                             <img src="../assets/red.png" alt="profile"  v-if="todo.priority === 3">
+
+<!--                            데이터 바인딩-->
                             <h3>{{todo.date}}</h3>
                         </div>
                         <div class="todo-text" v-if="todo.priority === 0" style="color: #9F9F9F">
@@ -77,6 +80,10 @@
         methods: {
             loadTodo(){
                 // this.getTodo()
+
+                //HTTP GET요청 , URL /api/todos/ 유저 아이디 / todo list
+
+                //유저의 모든 todo list 데이터를 받아옴.
                 axios.get('/api/todos/' + this.$userId + '/todolist')
                     .then(response =>{
                         this.todos = response.data;
@@ -84,6 +91,8 @@
                     .catch(error => console.log(error));
             },
             deleteTodo(todoId){
+
+                //HTTP DELETE 요청, URL /api/todos / 유저아이디 / todolist / todo 의 ID값
 
                 axios.delete('/api/todos/' + this.$userId + '/todolist/' + todoId)
                     .then(response =>{
@@ -101,6 +110,9 @@
 
                 let bool = '1';
 
+                // HTTP put 요청. 아직 안 했는것으로 변경을 위해 동작. url은  delete  todo 와 같음.
+
+                // URL 에 todo의 정보 추가!
                 params.append('id', todoId);
                 params.append('todo', todo);
                 params.append('isDone', bool);
@@ -122,8 +134,10 @@
                 let params = new URLSearchParams();
 
                 priority++;
-                if(priority>3) priority = 0;
+                if(priority>3)priority = 0;
 
+
+                // HTTP put 요청.  우선순위 변경을 위해 동작. url은  delete  todo 와 같음.
                 params.append('id', todoId);
                 params.append('todo', todo);
                 params.append('isDone', bool);

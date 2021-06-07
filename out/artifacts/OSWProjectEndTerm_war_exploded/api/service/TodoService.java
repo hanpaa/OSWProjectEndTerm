@@ -26,10 +26,6 @@ public class TodoService {
         return result;
     }
 
-//    public List<Todo> getAlreadyDoneTodo(String userId){
-//
-//    }
-
     //인증 추가 요함.
     public void createTodoService(String userId, String todo, String date) throws ParseException {
         Todo dto = null;
@@ -48,6 +44,7 @@ public class TodoService {
         }
 
         try{
+            //해당 정보로 create todo
             dao.createTodoList(dto);
         }catch (Exception e){
             System.out.println("createTodo error. check TodoService");

@@ -24,8 +24,11 @@
             this.$on('hook:destroyed', () => window.clearTimeout(timer))
         },
         methods: {
+
+            // 시계 실시간으로 변경
             updateDateTime() {
                 var cd = new Date();
+                //date format 설정
                 this.time = zeroPadding(cd.getHours(), 2) + ':' + zeroPadding(cd.getMinutes(), 2);
                 this.date = zeroPadding(cd.getFullYear(), 4) + '년 ' + zeroPadding(cd.getMonth()+1, 2) + '월 ' + zeroPadding(cd.getDate(), 2) + '일 ' + week[cd.getDay()];
                 this.$options.timer = window.setTimeout(this.updateDateTime, SECOND);

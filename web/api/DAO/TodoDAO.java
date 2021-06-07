@@ -18,6 +18,7 @@ public class TodoDAO {
     public TodoDAO(){
         connection = null;
         try{
+            //DB 정보 입력!
             String id = "root";
             String pw = "chlwpgus123"; // 추후 텍스트 처리
             Class.forName("com.mysql.jdbc.Driver");
@@ -34,7 +35,10 @@ public class TodoDAO {
 
     }
 
+    //SQL문 DB에 삽입.
     public List<Todo> getTodoList(String userId) throws SQLException{
+
+        //받을때부터 오름차순 으로 받아오도록 SQL문 작성....
         String sql = "SELECT * FROM web_programming.todos WHERE user=? ORDER BY date ASC";
         List<Todo> todoList = null;
 
@@ -59,6 +63,7 @@ public class TodoDAO {
     public List<Todo> getList(ResultSet rs) throws SQLException{
         List<Todo> todoList = new ArrayList<Todo>();
         while(rs.next()){
+            //모든 todo 받아올거야
             Todo todoDTO = new Todo();
             todoDTO.setTodoId(rs.getInt("id"));
             todoDTO.setUser(rs.getString("user"));
@@ -73,6 +78,8 @@ public class TodoDAO {
     }
 
     public void createTodoList(Todo dto) throws SQLException {
+
+        // DB에 todo INSERT
         String sql = "INSERT INTO web_programming.todos (id, user, todo, isDone, date)"
                 +"VALUES(default, ?, ?, ?, ?)";
         try{
@@ -103,6 +110,7 @@ public class TodoDAO {
     }
 
     public void updateTodoList(Todo dto) throws SQLException {
+        //todo 정보 변경. priorit나, todo를 했는지 안했는지 변경.
         String sql = "UPDATE web_programming.todos SET todo = ?," +
                 "isDone =?, date = ?, priority = ? WHERE id = ?";
         try{
@@ -145,6 +153,7 @@ public class TodoDAO {
                 return;
             }
             System.out.println("delete excuted");
+            //DB내의 ID를 자동적으로 제 배열을 하려고 했으나..... 삭제
 //            sql =   "SET sql_safe_updates=0;"+
 //                    "ALTER TABLE web_programming.todos AUTO_INCREMENT=1;" +
 //                    "SET @COUNT = 0;" +

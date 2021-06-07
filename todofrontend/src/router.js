@@ -5,6 +5,7 @@ import isDone from "@/views/isDone";
 
 Vue.use(VueRouter);
 
+//URL변경시 감지 하고 해당 컴포넌트로 이동.
 const router = new VueRouter({
     mode: "history",
     routes: [

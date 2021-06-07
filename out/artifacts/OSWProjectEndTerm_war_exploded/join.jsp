@@ -43,7 +43,7 @@
 	</div>
 
 	<footer class="copyright">
-        <p>Copyright 2020. TEAM 8. All right reserved </p>
+        <p>Copyright 2021. TEAM 8. All right reserved </p>
     </footer>
 
 	<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>

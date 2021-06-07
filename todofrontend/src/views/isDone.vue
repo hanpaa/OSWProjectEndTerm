@@ -72,20 +72,27 @@
         },
         methods: {
             loadTodo(){
+                //HTTP GET요청 , URL /api/todos/ 유저 아이디 / todo list
                 axios.get('/api/todos/' + this.$userId + '/todolist')
                     .then(response =>{
+                        // response 로 받은 JSON을 data array에 추가.
                         this.todos = response.data;
                     })
                     .catch(error => console.log(error));
             },
+
             deleteTodo(todoId){
 
+                //HTTP DELETE 요청, URL /api/todos / 유저아이디 / todolist / todo 의 ID값
                 axios.delete('/api/todos/' + this.$userId + '/todolist/' + todoId)
                     .then(response =>{
+                        //만약 제대로 response를 받는다면...
                         console.log(todoId+"번 TODO 삭제" + response);
                     })
                     .catch(error => console.log(error));
 
+
+                //목록 새로고
                 setTimeout(this.loadTodo(), 100);
                 setTimeout(this.loadTodo(), 100);
 
@@ -96,6 +103,7 @@
 
                 let bool = '0';
 
+                // HTTP put 요청. 이미 했는것으로 변경을 위해 동작. url은  delete  todo 와 같음.
                 params.append('id', todoId);
                 params.append('todo', todo);
                 params.append('isDone', bool);

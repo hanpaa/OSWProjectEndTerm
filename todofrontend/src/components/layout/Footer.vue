@@ -50,6 +50,7 @@
             }
         },
         methods:{
+            //popup 동작
             openPopUp() {
                 const popup = document.querySelector(".popup");
                 setTimeout(function(){ popup.style.display = "flex"; }, 500);
@@ -58,13 +59,20 @@
                 const popup = document.querySelector(".popup");
                 popup.style.display = "none";
             },
+            //todo list를 생성하기 위한 동작.
             createTodo(value, todo){
+
+
                 const params = new URLSearchParams();
+                //URL에 todo 정보 추가.
                 params.append('todo', todo);
                 params.append('date', value);
 
+
+                //HTTP POST방식으로 동작 . todo 를 DB에 추가하기 위해 동작.
                 axios.post('/api/todos/' + this.$userId + '/todolist', params)
                     .then(response =>{
+                        //제대로 response를 받았으면...
                         console.log(todo+"추가" + response);
                     })
                     .catch(error => console.log(error));
