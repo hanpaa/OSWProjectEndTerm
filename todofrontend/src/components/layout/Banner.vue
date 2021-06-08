@@ -14,6 +14,7 @@
     import {SECOND, zeroPadding, week} from './Filters';
     export default {
         data() {
+            //실질적으로 데이터들이 들어올 곳
             return {
                 time: '',
                 date: ''

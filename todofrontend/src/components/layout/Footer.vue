@@ -50,7 +50,7 @@
             }
         },
         methods:{
-            //popup 동작
+            //popup 동작 안보이다가 나옴
             openPopUp() {
                 const popup = document.querySelector(".popup");
                 setTimeout(function(){ popup.style.display = "flex"; }, 500);
