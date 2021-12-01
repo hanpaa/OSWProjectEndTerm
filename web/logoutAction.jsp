@@ -24,7 +24,7 @@
 
 			script.println("<script>");
 			script.println("alert('로그아웃 되었습니다.')");
-			script.println("location.href='http://osw8team.kro.kr:8080/'");
+			script.println("location.href='http://locahost:8080/'");
 			script.println("</script>");
 
 		}
@@ -32,7 +32,7 @@
 
 	%>
 	<script>
-		// location.href="http:/osw8team.kro.kr:8080/";//세션 해제 후 index페이지로 이동
+		// location.href="http:/locahost:8080/";//세션 해제 후 index페이지로 이동
 	</script>
 </body>
 </html>

@@ -24,7 +24,7 @@
 			PrintWriter script=response.getWriter();
 			script.println("<script>");
 			script.println("alert('이미 로그인이 되어있습니다.')");
-			script.println("location.href='http://osw8team.kro.kr:8080/'");
+			script.println("location.href='http://locahost:8080/'");
 			script.println("</script>");
 		}
 
@@ -54,7 +54,7 @@
 				cookie.setMaxAge(60*60*4);
 				response.addCookie(cookie);
 
-				script.println("location.href='http://osw8team.kro.kr:8080/'");
+				script.println("location.href='http://locahost:8080/'");
 				script.println("</script>");
 			}
 		}

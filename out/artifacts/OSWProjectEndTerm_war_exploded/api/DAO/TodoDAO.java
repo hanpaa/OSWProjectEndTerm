@@ -37,6 +37,8 @@ public class TodoDAO {
 
     //SQL문 DB에 삽입.
     public List<Todo> getTodoList(String userId) throws SQLException{
+
+        //받을때부터 오름차순 으로 받아오도록 SQL문 작성....
         String sql = "SELECT * FROM web_programming.todos WHERE user=? ORDER BY date ASC";
         List<Todo> todoList = null;
 
@@ -61,6 +63,7 @@ public class TodoDAO {
     public List<Todo> getList(ResultSet rs) throws SQLException{
         List<Todo> todoList = new ArrayList<Todo>();
         while(rs.next()){
+            //모든 todo 받아올거야
             Todo todoDTO = new Todo();
             todoDTO.setTodoId(rs.getInt("id"));
             todoDTO.setUser(rs.getString("user"));
@@ -75,6 +78,8 @@ public class TodoDAO {
     }
 
     public void createTodoList(Todo dto) throws SQLException {
+
+        // DB에 todo INSERT
         String sql = "INSERT INTO web_programming.todos (id, user, todo, isDone, date)"
                 +"VALUES(default, ?, ?, ?, ?)";
         try{
@@ -105,6 +110,7 @@ public class TodoDAO {
     }
 
     public void updateTodoList(Todo dto) throws SQLException {
+        //todo 정보 변경. priorit나, todo를 했는지 안했는지 변경.
         String sql = "UPDATE web_programming.todos SET todo = ?," +
                 "isDone =?, date = ?, priority = ? WHERE id = ?";
         try{

@@ -22,7 +22,7 @@
 			PrintWriter script=response.getWriter();
 			script.println("<script>");
 			script.println("alert('이미 로그인이 되어있습니다.')");
-			script.println("location.href='http://osw8team.kro.kr:8080/'");
+			script.println("location.href='http://locahost:8080/'");
 			script.println("</script>");
 		}
 
@@ -36,7 +36,7 @@
 			response.addCookie(cookie);
 //			Cookie groupCookie = new Cookie("group", user.getGroup());
 			script.println("<script>");
-			script.println("location.href='http://osw8team.kro.kr:8080/'");//로그인에 성공하면 index페이지로
+			script.println("location.href='http://locahost:8080/'");//로그인에 성공하면 index페이지로
 			script.println("</script>");
 		}
 		else if(result==0){

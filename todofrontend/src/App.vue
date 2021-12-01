@@ -1,48 +1,60 @@
 <template>
-  <div id="app">
-    <Header/>
-    <Banner/>
-    <article class="list">
-      <div class="list-area">
-        <div class="todo-list-sort">
-          <div class="sort-method">
-            <a id="listdefault">
-              <router-link to="/todo">할일</router-link></a>
-            <a>
-              <router-link to="/done">했당</router-link></a>
-          </div>
-        </div>
-        <div class="todo-list" id="listinclude">
-          <router-view></router-view>
-          <div class="box" v-if="this.$userId === null">
-            <div class="box-contents">
-              <h2 class="warning">로그인해주세요</h2>
-            </div>
-        </div>
+  <v-app>
+    <v-app-bar
+      app
+      color="primary"
+      dark
+    >
+      <div class="d-flex align-center">
+        <v-img
+          alt="Vuetify Logo"
+          class="shrink mr-2"
+          contain
+          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
+          transition="scale-transition"
+          width="40"
+        />
+
+        <v-img
+          alt="Vuetify Name"
+          class="shrink mt-1 hidden-sm-and-down"
+          contain
+          min-width="100"
+          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
+          width="100"
+        />
       </div>
-      </div>
-    </article>
-    <Footer/>
-  </div>
+
+      <v-spacer></v-spacer>
+
+      <v-btn
+        href="https://github.com/vuetifyjs/vuetify/releases/latest"
+        target="_blank"
+        text
+      >
+        <span class="mr-2">Latest Release</span>
+        <v-icon>mdi-open-in-new</v-icon>
+      </v-btn>
+    </v-app-bar>
+
+    <v-main>
+      <HelloWorld/>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
+import HelloWorld from './components/HelloWorld';
 
-
-import Header from "@/components/layout/Header";
-import Banner from "@/components/layout/Banner";
-import Footer from "@/components/layout/Footer";
 export default {
   name: 'App',
+
   components: {
-    Footer,
-    Banner,
-    Header
-  }
-}
+    HelloWorld,
+  },
+
+  data: () => ({
+    //
+  }),
+};
 </script>
-
-<style>
-
-</style>
-

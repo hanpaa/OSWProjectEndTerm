@@ -65,20 +65,32 @@
         data(){
             return{
                 todos: [],
+                politicians: []
             };
         },
         mounted(){
             this.loadTodo();
+            this.loadpo();
+            console.log(this.politicians)
         },
         methods: {
+          loadpo(){
+            axios.get('/api/politicians/2')
+                .then(response =>{
+                  // response 로 받은 JSON을 data array에 추가.
+                  this.politicians = response.data;
+                })
+                .catch(error => console.log(error));
+          }
+          ,
             loadTodo(){
-                //HTTP GET요청 , URL /api/todos/ 유저 아이디 / todo list
-                axios.get('/api/todos/' + this.$userId + '/todolist')
-                    .then(response =>{
-                        // response 로 받은 JSON을 data array에 추가.
-                        this.todos = response.data;
-                    })
-                    .catch(error => console.log(error));
+              //HTTP GET요청 , URL /api/todos/ 유저 아이디 / todo list
+              axios.get('/api/todos/' + this.$userId + '/todolist')
+                  .then(response =>{
+                    // response 로 받은 JSON을 data array에 추가.
+                    this.todos = response.data;
+                  })
+                  .catch(error => console.log(error));
             },
 
             deleteTodo(todoId){
